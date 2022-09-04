@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scorecards</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/60a1748f07.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="nav">
+		<h2>Add todays players here:</h2>
+    	<a class="logout" href="/logout">Logout</a>
+	</div>
+	<form class="shooterForm" action="/dashboard/createUser" method='POST'>
+        <input type="text" placeholder="Enter shooters name" name='todoItem'>
+        <input type="submit">
+    </form>
+
+    <h1>Shooters</h1>
+    <ul>
+        <% shooter.forEach( el => { %>
+            <li class='todoItem' data-id='<%=el._id%>'>
+                <i class="fa-solid fa-trash"></i>
+                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.shooterName %></span>
+                <span class='keepScore'><%= el.score %></span>
+                <i class="fa-solid fa-circle-minus"></i>
+                <i class="fa-solid fa-circle-plus"></i>
+            </li>
+            <li class="scoreRow">
+                <% domScorecard.forEach(el => { %>
+                    <i class="flexRow" data-id="<%=el._id%>"></i>
+                    <i class="oneOrZero"><%= el.score %></i>
+                <% }) %>
+            </li>
+        <% }) %>    
+    </ul>
+    
+
+    <!-- <h2> < %= left %> things left to do.</h2> -->
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
