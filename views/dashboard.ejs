@@ -29,12 +29,6 @@
                 <i class="fa-solid fa-circle-minus"></i>
                 <i class="fa-solid fa-circle-plus"></i>
             </li>
-            <li class="scoreRow">
-                <% domScorecard.forEach(el => { %>
-                    <i class="flexRow" data-id="<%=el._id%>"></i>
-                    <i class="oneOrZero"><%= el.score %></i>
-                <% }) %>
-            </li>
         <% }) %>    
     </ul>
     

@@ -15,10 +15,6 @@ router.put('/addOneScore', dashboardController.addOne)
 
 router.put('/minusOneScore', dashboardController.minusOne)
 
-router.put('/addOneDom', dashboardController.addOneDom)
-
-router.put('/addZeroDom', dashboardController.addZeroDom)
-
 router.delete('/deleteUser', dashboardController.deleteUser)
 
 
